@@ -1,0 +1,146 @@
+course overview:
+    search: AI searches for a solution to a problem
+    knowledge: AI know, represent, and draw conclusions from information
+    uncertainty: when a computer isn't sure about a fact; probability
+    optimization: a better or best way to solve a problem (less time and/or resources aka memory)
+    learning: computer can learn from data and from experiences to perform tasks better (spam filter)
+    neural networks: computer analog to how the human brain works
+    language: human, natural spoken/written language
+search:
+    example search problems:
+        - 15 puzzle game is an example
+        - finding way through maze another example
+        - driving directions another example
+    terminology:
+        agent: entity that perceives it's environment and acts upon that environment
+        state: a configuration of the agent and its environment
+        initial state: the state in which the agent begins
+        actions: 
+            - choices that can be made in a state
+            - ACTIONS(s) returns the set of actions that can be executed in state s
+        transition model: 
+            - a description of what state results from performing any applicable action in any state  
+            - RESULT(s,a) returns the state resulting from performing action a in state s
+        state space: 
+            - the set of all states reachable from the initial state by any sequence of actions
+            - often represented as a graph, a sequence of nodes and edges that connect nodes. Arrows represent actions that take us from one state to another
+        goal test: way to determine whether a given state is a goal state
+        path cost: 
+            - numerical cost associated with a given path
+            - we generally want to minimize the path cost (less expensive, takes less time etc)
+            - in graph representation, the edges would have a number representing the path cost
+        search problem:
+            - initial state
+            - actions
+            - transition model
+            - goal test
+            - path cost function
+        solution: a sequence of actions that leads from the initial state to a goal state
+        optimal solution: a solution that has the lowest path cost among all solutions
+        node:
+            - a data structure that keeps track of:
+                - a state
+                - a parent (node that generated this node)
+                - an action (action applied to parent to get node)
+                - a path cost (from initial state to node)
+        frontier: all of the states that we could explore next, but we haven't yet explored or visited
+    approach:
+        - start with a frontier that contains the initial state
+        - repeat:
+            - if the frontier is empty, then no solution
+            - Remove a node from the frontier
+            - if node contains goal state, return the solution
+            - Expand node (look at all of the neighbors of the node), add resulting nodes to the frontier
+    revised approach:
+        - start with a frontier that contains the initial state
+        - start with an empty explored set
+        - repeat:
+            - if the frontier is empty, then no solution
+            - Remove a node from the frontier
+            - if node contains goal state, return the solution
+            - Add the node to the explored set
+            - Expand node, add resulting nodes to the frontier if they aren't already in the frontier or the explored set
+    frontier is a data structure, so how we add and remove is important:
+    data structures:
+        - stack: last in first-out data type
+        - queue: first-in first-out data type
+    when we use a stack for our frontier, the algorithm is a depth-first search:
+    when we use a queue for our frontier, the algorithm is a breadth-first search:
+    depth-first search (DFS):
+        - search algorithm that always expands the deepest node in the frontier
+        - algorithm goes as deep as possible until it hits a dead end
+        - might not find the most optimal solution when a better solution is available
+        - might get memory savings with depth first search
+    breadth-first search (BFS):
+        - search algorithm that always expands the shallowest node in the frontier
+        - goes to nodes 1 away, then 2 away, then 3 away, etc
+        - will find the most optimal path, but will have to explore a lot more states that aren't part of the solution
+    distinction between two different types of search algorithms: uninformed search and informed search
+    uninformed search: 
+        - search strategy that uses no problem specific knowledge
+        - DFS and BFS are examples
+    informed search:
+        - search strategy that uses problem-specific knowledge to find solutions more efficiently
+        - for example in a maze, one may opt to choose the node geographically closer to the goal next
+        - one such algorithm is greedy best-first search
+    greedy best-first search (GBFS): 
+        - search algorithm that expands the node that is closet to the goal, as estimated by a heuristic function h(n)
+        - makes the best decision locally based on the heuristic, so it may not find the optimal solution
+    heuristic functions:
+        - are only estimates. If we could calculate exactly, we'd have a solution.
+        - how good the heuristic is determines how good the algorithm is
+    A * search:
+        - search algorithm that expands node with lowest value of g(n) + h(n)
+        - g(n) = cost to reach node
+        - h(n) = estimated cost to goal
+        - will result in an optimal solution under certain conditions:
+            - h(n) is admissible (never overestimates the true cost)
+            - h(n) is consistent (for every node n and successor n' with step cost c, h(n) <= h(n`) + c)
+        - known to use quite a bit of memory
+    All of the previous search algorithms only have 1 agent:
+    Adversarial Search: 
+        - multiple agents have opposing goals
+        - tic tac toe is an example
+    Minimax:
+        - assign a utility to state.
+        - one agent is a min agent. The other is a max agent. The goal is to minimize/maximize the score respectively
+        - For a game (like tic-tac-toe):
+            - S_0: initial state
+            - PLAYER(s): returns which player to move in state s
+            - ACTIONS(s): returns legal moves in state s
+            - RESULT(s,a): returns state after action a taken in state state
+            - TERMINAL(s): checks if state s is a terminal state
+            - UTILITY(s):
+                - gives a score for state s
+                - for tic-tac toe where X is max player and O is min player:
+                    - X winning has utility score 1
+                    - O winnnig has utility score -1
+                    - neither winning has utility score 0
+                - must be called recursively from the opposite player's goal/perspective for non-terminal states
+        - pseudo-code:
+            - given a state s:
+                - MAX picks action a in ACTIONS(s) that produces highest value of MIN-VALUE(RESULT(s,a))
+                - MIN picks action a in ACTIONS(s) that produces the lowest value of MAX-VALUE(RESULT(s,a))
+        - function MAX-VALUE(state):
+            - if TERMINAL(state):
+                - return UTILITY(s)
+            - v = -INF
+            - for action in ACTIONS(state):
+                - v = MAX(v, MIN-VALUE(RESULT(state, action)))
+            - return v
+        - function MIN-VALUE(state):
+            - if TERMINAL(state):
+                - return UTILITY(s)
+            - v = INF
+            - for action in ACTIONS(state):
+                - v = MIN(v, MAX-VALUE(RESULT(state, action)))
+            - return v
+    Alpha-Beta Pruning:
+        - Minimax algorithm that keeps track of the best and worse that can be done in order to minimize the number of states explored
+    Depth-Limited Minimax:
+        - stops consider moves after a certain depth
+        - once depth is reached, an evaluation function is used to estimate utility.
+        - evaluation function: function that estimates the expected utility of the game from a given state
+            
+
+  
