@@ -1,0 +1,29 @@
+current place: https://youtu.be/LucW-p6zC5c?t=1307
+knowledge: the idea tht a lot of intelligence is based on known facts; draw conclusions and reason about information
+knowledge-based agents: agents that reason by operating on internal representations of knowledge
+sentence: an assertion about the world in a knowledge representation language
+Propositional Logic:
+  - Proposition Symbols: facts about the world represented by letters such as P,Q,R
+  - Logical Connectives: 
+    - relate proposition symbols to one another and include
+    - symbols:
+      - ¬ not
+      - ^ and
+      - v or
+      - → implication
+      - ↔ biconditional
+    - Not (¬):
+      - [P, ¬P]
+      - [false, true]
+      - [true, false]
+    - Other Truth tables can go here
+model: assignment of a truth value to every propositional symbol (a "possible world")
+knowledge base: a set of sentences known by a knowledge-based agent
+Entailment:
+  - α ⊨ β
+  - In every model in which sentence α is true, sentence β is also true
+  - alpha entails beta
+  - alpha and beta are sentences in propositional logic
+inference: the process of deriving new sentences from old ones
+
+    

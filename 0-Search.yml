@@ -114,7 +114,7 @@ search:
                 - gives a score for state s
                 - for tic-tac toe where X is max player and O is min player:
                     - X winning has utility score 1
-                    - O winnnig has utility score -1
+                    - O winning has utility score -1
                     - neither winning has utility score 0
                 - must be called recursively from the opposite player's goal/perspective for non-terminal states
         - pseudo-code:
