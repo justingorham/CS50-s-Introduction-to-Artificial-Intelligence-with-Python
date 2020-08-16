@@ -8,15 +8,38 @@ Propositional Logic:
     - relate proposition symbols to one another and include
     - symbols:
       - ¬ not
-      - ^ and
-      - v or
+      - ∧ and
+      - ∨  or
       - → implication
       - ↔ biconditional
     - Not (¬):
       - [P, ¬P]
       - [false, true]
       - [true, false]
-    - Other Truth tables can go here
+    - And (∧):
+      - [P, Q, P ∧ Q]
+      - [true, true, true]
+      - [true, false, false]
+      - [false, true, false]
+      - [false, false, false]
+    - Or (∨):
+      - [P, Q, P ∨ Q]
+      - [true, true, true]
+      - [true, false, true]
+      - [false, true, true]
+      - [false, false, false]
+    - Implication (→):
+      - [P, Q, P → Q]
+      - [true, true, true]
+      - [true, false, false]
+      - [false, true, true]
+      - [false, false, true]
+    - Biconditional (↔):
+      - [P, Q, P → Q]
+      - [true, true, true]
+      - [true, false, false]
+      - [false, true, false]
+      - [false, false, true]
 model: assignment of a truth value to every propositional symbol (a "possible world")
 knowledge base: a set of sentences known by a knowledge-based agent
 Entailment:
