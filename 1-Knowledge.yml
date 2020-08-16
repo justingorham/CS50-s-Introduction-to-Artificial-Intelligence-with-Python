@@ -1,4 +1,4 @@
-current place: https://youtu.be/LucW-p6zC5c?t=1307
+current place: https://youtu.be/LucW-p6zC5c?t=3866
 knowledge: the idea tht a lot of intelligence is based on known facts; draw conclusions and reason about information
 knowledge-based agents: agents that reason by operating on internal representations of knowledge
 sentence: an assertion about the world in a knowledge representation language
@@ -41,12 +41,21 @@ Propositional Logic:
       - [false, true, false]
       - [false, false, true]
 model: assignment of a truth value to every propositional symbol (a "possible world")
-knowledge base: a set of sentences known by a knowledge-based agent
+knowledge base (KB): a set of sentences known by a knowledge-based agent
 Entailment:
   - α ⊨ β
   - In every model in which sentence α is true, sentence β is also true
   - alpha entails beta
   - alpha and beta are sentences in propositional logic
 inference: the process of deriving new sentences from old ones
+For some query α, does KB ⊨ α?:
+Model Checking: 
+  - To determine if KB ⊨ α:
+    - Enumerate all possible models
+    - If in every model where KB is true, α is true, then KB entails α.
+Knowledge Engineering: the process of taking a problem and figuring out what propositional symbols to use in order to represent it logically in a computer
+Propositional Symbol: a variable that can be either true or false
+Model checking is not an efficient algorithm because it has to check all combination of symbols which is O(2^n):
+Inference rules:
 
     
