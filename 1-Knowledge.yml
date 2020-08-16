@@ -1,4 +1,4 @@
-current place: https://youtu.be/LucW-p6zC5c?t=3866
+current place: https://youtu.be/LucW-p6zC5c?t=4682
 knowledge: the idea tht a lot of intelligence is based on known facts; draw conclusions and reason about information
 knowledge-based agents: agents that reason by operating on internal representations of knowledge
 sentence: an assertion about the world in a knowledge representation language
@@ -14,7 +14,7 @@ Propositional Logic:
       - ↔ biconditional
     - Not (¬):
       - [P, ¬P]
-      - [false, true]
+      - [false, true] 
       - [true, false]
     - And (∧):
       - [P, Q, P ∧ Q]
@@ -57,5 +57,46 @@ Knowledge Engineering: the process of taking a problem and figuring out what pro
 Propositional Symbol: a variable that can be either true or false
 Model checking is not an efficient algorithm because it has to check all combination of symbols which is O(2^n):
 Inference rules:
+  - premise
+  - ___________
+  - conclusions
+Modus Ponens:
+  - α → β
+  - α
+  - __________________
+  - β
+And Elimination:
+  - α ∧ β
+  - ___________________
+  - α
+Double negation elimination:
+  - ¬(¬α)
+  - ___________________
+  - α
+Implication Elimination:
+  - α → β
+  - __________________
+  - ¬α ∨ β
+Biconditional Elimination:
+  - α ↔ β
+  - __________________
+  - (α → β) ∧ (β → α)
+De Morgan's Law:
+  - ¬(α ∧ β)
+  - __________________
+  - ¬α ∨ ¬β
+  - also
+  - ¬(α ∨ β)
+  - __________________
+  - ¬α ∧ ¬β
+Distributive Property:
+  - might write later  
+Theorem Proving:
+  - initial state: starting knowledge base
+  - actions: inference rules
+  - transition model: new knowledge base after inference
+  - goal test: check statement we're trying to prove
+  - path cost function: number of steps in proof
+Same paradigms as search problems!!!!:
+Resolution:
 
-    
