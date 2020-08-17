@@ -1,4 +1,4 @@
-current place: https://youtu.be/LucW-p6zC5c?t=5046
+current place: https://youtu.be/LucW-p6zC5c?t=5424
 knowledge: the idea tht a lot of intelligence is based on known facts; draw conclusions and reason about information
 knowledge-based agents: agents that reason by operating on internal representations of knowledge
 sentence: an assertion about the world in a knowledge representation language
@@ -112,6 +112,24 @@ Resolution:
 Clause:
   - a disjunction of literals
   - P ∨ Q ∨ R
-Conjunctive normal form:
+Conjunctive normal form (CNF):
   - logical sentences that is a conjunction of clauses
   - (A ∨ B ∨ C) ∧ (D ∨ ¬E) ∧ (F ∨ G)
+Conversion to CNF:
+  - Eliminate biconditionals:
+    - turn α ↔ β into (α → β) ∧ (β → α)
+  - Eliminate implications
+    - turn α → β into ¬α ∨ β
+  - Move ¬ in using De Morgan's Laws:
+    - ${self:De Morgan's Law}
+  - Use distributive law to distribute ∨ whenever possible
+Conversion to CNF example:
+  - (P ∨ Q) → R
+  - ¬(P ∨ Q) ∨ R
+  - (¬P ∧ ¬Q) ∨ R
+  - (¬P ∨ R) ∧ (¬Q ∨ R) 
+Inference by Resolution:
+Can eliminate duplicate variables in resolved conjunctions/disjunctions:
+P and ¬P resolve to an empty clause/set:
+  - this is always/equivalent to false
+
