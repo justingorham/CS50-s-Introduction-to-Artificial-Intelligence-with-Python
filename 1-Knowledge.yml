@@ -1,4 +1,3 @@
-current place: https://youtu.be/LucW-p6zC5c?t=5424
 knowledge: the idea tht a lot of intelligence is based on known facts; draw conclusions and reason about information
 knowledge-based agents: agents that reason by operating on internal representations of knowledge
 sentence: an assertion about the world in a knowledge representation language
@@ -129,7 +128,21 @@ Conversion to CNF example:
   - (¬P ∧ ¬Q) ∨ R
   - (¬P ∨ R) ∧ (¬Q ∨ R) 
 Inference by Resolution:
+  - To determine if KB ⊨ α:
+    - Check if (KB ∧ ¬α) is a contradiction?:
+      - If so, then KB ⊨ α
+      - Otherwise, no entailment
+    - More formally:
+      - Convert (KB ∧ ¬α) to Conjunctive Normal Form
+      - Keep checking to see if we can use resolution to produce a new clause:
+        - If ever we produce the empty clause (equivalent to False), we have a contradiction, and KB ⊨ α
+        - Otherwise, if we can't add new clauses, no entailment
 Can eliminate duplicate variables in resolved conjunctions/disjunctions:
 P and ¬P resolve to an empty clause/set:
   - this is always/equivalent to false
+First Order Logic:
+Universal Quantification ∀:
+  - For all values of a particular variable
+Existential Quantification ∃:
+  - There exist a value such that
 
