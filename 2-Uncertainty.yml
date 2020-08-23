@@ -1,4 +1,4 @@
-Current Place: https://youtu.be/uQmYZTTqDC0?t=2040
+Current Place: https://youtu.be/uQmYZTTqDC0?t=2413
 Probability:
 Possible Worlds:
   - represented by ω
@@ -35,3 +35,10 @@ Bayes' Rule:
   - Used in the following manner:
     - Knowing P(visible effect | unknown cause)
     - we can calculate P(unknown cause | visible effect)
+Joint Probability:
+  - the likelihood of multiple different events simultaneously
+  - the probability distribution of each of the possible combinations of values that random variables can take on
+  - can infer conditional probability from joint probability
+  - conditional probability is proportional to the joint probability:
+    - P(a | b) = αP(a,b)
+    - The comma is interchangeable with ∧
