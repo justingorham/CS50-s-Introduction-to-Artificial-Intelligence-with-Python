@@ -1,4 +1,4 @@
-Current Place: https://youtu.be/uQmYZTTqDC0?t=2982
+Current Place: https://youtu.be/uQmYZTTqDC0?t=4169
 Probability:
 Possible Worlds:
   - represented by ω
@@ -53,3 +53,14 @@ Probability rules:
   - Conditioning:
     - P(a) = P(a|b)P(b) + P(a|¬b)P(¬b)
     - P(X = x_i) =  ∑_j P(X = x_i | Y = y_j)P(Y = y_j)
+Bayesian network:
+  - data structure that represents the dependencies among random variables
+  - directed graph
+  - each node represents a random variable
+  - arrow from X to Y means X is a parent of Y
+  - each node x has probability distribution P(X | Parents(X))
+Inference:
+  - "Query X: variable for which to compute distribution"
+  - "Evidence variables E: observed variables for event e"
+  - "Hidden variables Y: non-evidence, non-query variable"
+  - "Goal: Calculate P(X|e)"
