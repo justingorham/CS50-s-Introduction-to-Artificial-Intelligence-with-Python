@@ -1,0 +1,37 @@
+Current Place: https://youtu.be/uQmYZTTqDC0?t=2040
+Probability:
+Possible Worlds:
+  - represented by ω
+  - each world has probability represented by P(ω)
+  - 0 ≤ P(ω) ≤ 1
+  - Σ_{ω∈Ω} P(ω) = 1:
+    - The sum of the probability of all possible worlds equals 1
+Unconditional Probability:
+  - degree of belief in a proposition in the absence of any other evidence
+Conditional Probability:
+  - degree of belief in a proposition given some evidence that has already been revealed
+  - P(a|b)
+  - The probability of a given 
+  - Formula:
+    - P(a|b) = P(a ∧ b)
+    -         -----------
+    -            P(b)
+  - The fraction of all of the worlds where a and b is true over all of the worlds where b is true
+  - Formula often expressed as:
+    - P(a ∧ b) = P(b)P(a|b) 
+    - P(a ∧ b) = P(a)P(b|a)
+random variable:
+  - a variable in probability theory with a domain of possible values it can take on
+probability distribution:
+  - the probability of each value for a random variable
+independence:
+  - the knowledge that one event occurs does not affect the probability of the other event
+  - for independent variables P(a ∧ b) = P(a)P(b|a) = P(a)P(b)
+Bayes' Rule:
+  - Formula:
+    - P(b|a) = P(b)P(a|b)
+    -          ----------
+    -             P(a)
+  - Used in the following manner:
+    - Knowing P(visible effect | unknown cause)
+    - we can calculate P(unknown cause | visible effect)
