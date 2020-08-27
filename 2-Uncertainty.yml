@@ -13,9 +13,9 @@ Conditional Probability:
   - P(a|b)
   - The probability of a given
   - Formula:
-      - P(a|b) = P(a ∧ b)
-      - -----------
-      - P(b)
+      - "P(a|b) = P(a ∧ b)"
+      - "        -----------"
+      - "           P(b)"
   - The fraction of all of the worlds where a and b is true over all of the worlds where b is true
   - Formula often expressed as:
       - P(a ∧ b) = P(b)P(a|b)
@@ -29,9 +29,7 @@ independence:
   - for independent variables P(a ∧ b) = P(a)P(b|a) = P(a)P(b)
 Bayes' Rule:
   - Formula:
-      - P(b|a) = P(b)P(a|b)
-      - ----------
-      - P(a)
+      - P(b|a) = P(b)P(a|b) / P(a)
   - Used in the following manner:
       - Knowing P(visible effect | unknown cause)
       - we can calculate P(unknown cause | visible effect)
@@ -51,8 +49,8 @@ Probability rules:
       - P(a) = P(a,b) + P(a, ¬b)
       - P(X = x_i) = ∑_j P(X = x_i, Y = y_j)
   - Conditioning:
-    - P(a) = P(a|b)P(b) + P(a|¬b)P(¬b)
-    - P(X = x_i) =  ∑_j P(X = x_i | Y = y_j)P(Y = y_j)
+      - P(a) = P(a|b)P(b) + P(a|¬b)P(¬b)
+      - P(X = x_i) =  ∑_j P(X = x_i | Y = y_j)P(Y = y_j)
 Bayesian network:
   - data structure that represents the dependencies among random variables
   - directed graph
@@ -69,15 +67,15 @@ Inference by Enumeration:
   - X is the query variable
   - e is the evidence
   - y ranges over values of hidden variables
-  - α normalizes the result 
+  - α normalizes the result
 Approximate Inference:
 Sampling:
-  - choose samples in proportion to probability. More samples = better accuracy 
+  - choose samples in proportion to probability. More samples = better accuracy
   - given a very unlikely event, you'll end up throwing away a lot of samples
   - Likelihood Weighting:
-    - Start by fixing the values for evidence variables.
-    - Sample the non-evidence variables using conditional probabilities in the Bayesian network
-    - "Weight each sample by its likelihood: the probability of all of the evidence"
+      - Start by fixing the values for evidence variables.
+      - Sample the non-evidence variables using conditional probabilities in the Bayesian network
+      - "Weight each sample by its likelihood: the probability of all of the evidence"
 Uncertainty over time:
   - X_t: value at of variable at time t
 Markov assumption:
@@ -86,23 +84,19 @@ Markov assumption:
 Sensor Model:
   - We don't have access to hidden/true state, but we can make observations that are based on hidden state
   - Examples:
-    - Hidden State | Observation
-    - robot's position | robots sensor data
-    - words spoken (to Alexa or something) | audio waveforms
-    - user engagement | website or app analytics
-    - weather | umbrella 
+      - Hidden State | Observation
+      - robot's position | robots sensor data
+      - words spoken (to Alexa or something) | audio waveforms
+      - user engagement | website or app analytics
+      - weather | umbrella
 Hidden Markov Model:
   - a Markov model for a system with hidden states that generate some observed event
 sensor Markov assumption:
   - the assumption that the evidence variable depends only on the corresponding state
   - Tasks:
-    - Task | Definition
-    - filtering | given observations frm start until now, calculate distribution for current state
-    - prediction | given observations from start until now, calculate distribution for a future state
-    - smoothing | given observations from start until now, calculate distribution for past state
-    - most likely explanation | given observations from start until now, calculate most likely sequence of states:
-      - common for voice recognition
-
-
-    
-
+      - Task | Definition
+      - filtering | given observations frm start until now, calculate distribution for current state
+      - prediction | given observations from start until now, calculate distribution for a future state
+      - smoothing | given observations from start until now, calculate distribution for past state
+      - ? most likely explanation | given observations from start until now, calculate most likely sequence of states
+        : - common for voice recognition
