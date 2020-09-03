@@ -1,0 +1,14 @@
+current location: https://youtu.be/TA5ZJm1ZYS4?t=444
+Optimization: choosing the best option form a set of options
+local search: 
+  - search algorithms that maintain a single node and searches by moving to a neighboring node
+  - most applicable when we don't care about the path, just the solution
+  - example how to place 2 hospitals in a map so that distance between any house to a hospital is minimized
+state-space landscape:
+  - all possible configurations of state, and a function that gives the cost of any state
+  - global maximum: a single state whose value is higher than all of the other states
+  - objective function: the function we're trying to maximize
+  - global minimum: a single state whose value is lower than all of the other states
+  - cost function: the function we're trying to minimize 
+  - current state: self explanatory
+  - neighbors: any node/state 1 step away from current state
