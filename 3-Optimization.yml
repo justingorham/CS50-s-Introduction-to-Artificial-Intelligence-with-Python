@@ -1,6 +1,6 @@
-current location: https://youtu.be/TA5ZJm1ZYS4?t=444
+current location: https://youtu.be/TA5ZJm1ZYS4?t=2443
 Optimization: choosing the best option form a set of options
-local search: 
+local search:
   - search algorithms that maintain a single node and searches by moving to a neighboring node
   - most applicable when we don't care about the path, just the solution
   - example how to place 2 hospitals in a map so that distance between any house to a hospital is minimized
@@ -9,6 +9,45 @@ state-space landscape:
   - global maximum: a single state whose value is higher than all of the other states
   - objective function: the function we're trying to maximize
   - global minimum: a single state whose value is lower than all of the other states
-  - cost function: the function we're trying to minimize 
+  - cost function: the function we're trying to minimize
   - current state: self explanatory
   - neighbors: any node/state 1 step away from current state
+Hill Climbing:
+  - a local search algorithm
+  - start at a state, consider the neighbors of the state. pick the highest neighbor. repeat until all neighbors are lower in value
+  - same for a global minimum
+  - function HILL-CLIMB(problem):
+      - current = initial state of problem
+      - repeat:
+          - neighbor = highest valued neighbor of current
+          - if neighbor not better than current:
+              - return current
+          - current = neighbor
+  - might not always give you optimal solution. May end up with local maxima/minimum
+  - flat local maximum could occur as well.
+  - shoulder (flat area that's not a local max or min) may be encountered as well.
+Hill Climbing Variants:
+  Variant: Definition
+  steepest-ascent: choose the highest-valued neighbor
+  stochastic: choose randomly from higher-valued neighbors
+  first-choice: choose the first higher-valued neighbor
+  random-restart: conduct hill climbing multiple times
+  local beam search: chooses the k highest-valued neighbors
+Simulated Annealing:
+  - simulating a high temperature system cooling into the solution
+  - Early on, higher "temperature": more likely to accept neighbors that are worse than current state
+  - Later on, lower "temperature": less likely to accept neighbors that re worse than current state
+  - function SIMULATED-ANNEALING(problem, max):
+      - current  = initial state of the problem
+      - for t = 1 to max:
+          - T = Temperature(t)
+          - neighbor = random neighbor of current
+          - ΔE = how much better neighbor is than current
+          - if ΔE > 0:
+            - current = neighbor
+          - with probability e^{ΔE/T} set current = neighbor
+      - return current
+Traveling Salesman Problem:
+  - computationally difficult
+  - NP-Complete problem
+  - one definition of a neighbor is switching 2 edges to (remove them and put them between the nodes that weren't connected)
