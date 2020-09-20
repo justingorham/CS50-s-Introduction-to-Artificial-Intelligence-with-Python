@@ -1,4 +1,4 @@
-current location: https://youtu.be/TA5ZJm1ZYS4?t=2443
+current location: https://youtu.be/TA5ZJm1ZYS4?t=3993
 Optimization: choosing the best option form a set of options
 local search:
   - search algorithms that maintain a single node and searches by moving to a neighboring node
@@ -36,7 +36,7 @@ Hill Climbing Variants:
 Simulated Annealing:
   - simulating a high temperature system cooling into the solution
   - Early on, higher "temperature": more likely to accept neighbors that are worse than current state
-  - Later on, lower "temperature": less likely to accept neighbors that re worse than current state
+  - Later on, lower "temperature": less likely to accept neighbors that are worse than current state
   - function SIMULATED-ANNEALING(problem, max):
       - current  = initial state of the problem
       - for t = 1 to max:
@@ -51,3 +51,26 @@ Traveling Salesman Problem:
   - computationally difficult
   - NP-Complete problem
   - one definition of a neighbor is switching 2 edges to (remove them and put them between the nodes that weren't connected)
+Linear Programming:
+  - Minimize a cot function (c_1)(x_1)+(c_2)(x_2)+...+(c_n)(x_n)
+  - With constraints of form (a_1)(x_1)+(a_2)(x_2)+...+(a_n)(x_n)≤b or of form (a_1)(x_1)+(a_2)(x_2)+...+(a_n)(x_n)=b
+  - with bounds for each variable (l_i)≤(x_i)≤(u_i)
+Linear Program Algorithms:
+  - Simplex
+  - Interior-Point
+Constraint Satisfaction:
+  - we have some number of variable that need to take on values, but those variables are subject to constraints
+  - constraint graph: nodes are variables, edges are a constraints
+Constraint Satisfaction Problem:
+  - Set of variables {X1,X2,...,Xn}
+  - Set of domains for each variable {D1,D2,...,Dn}
+  - Set of constraints C
+hard constraints: constraints that must be satisfied in a correct solution
+soft constraints: constraints that express some notion of which solutions are preferred over others
+hard constraints details:
+  - unary constraints: constraint involving only one variable
+  - binary constraint: 2 variables
+  - node consistency: when all the values in a variable's domain satisfy the variable's unary constraints
+arc consistency: 
+  - when all the values ina variable's domain satisfy the variable's binary constraints
+  - to make X arc-consistent with respect to Y, remove elements from X's domain until every choice for X has a possible choice for Y
