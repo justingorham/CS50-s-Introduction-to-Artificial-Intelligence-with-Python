@@ -1,4 +1,4 @@
-current location: https://youtu.be/TA5ZJm1ZYS4?t=4613
+current location: 
 Optimization: choosing the best option form a set of options
 local search:
   - search algorithms that maintain a single node and searches by moving to a neighboring node
@@ -105,3 +105,38 @@ CSPs as Search Problems:
   - goal test: check if all variables assigned and constraints all satisfied
   - path cost function: all paths have same cost
 Backtracking Search:
+  - make assignments from variables to values. If we get stuck, we'll backtrack and try something else
+  - function BACKTRACK(assignment, csp):
+    - if assignment complete: return assignment
+    - var = SELECT-UNASSIGNED-VAR(assignment,csp)
+    - for value in DOMAIN-VALUES(var,assignment,csp):
+      - if value consistent with assignment:
+        - add {var = value} to assignment
+        - result = BACKTRACK(assignment, csp)
+        - if result ≠ failure: return result
+      - remove {var = value} from assignment
+    - return failure
+maintaining arc-consistency:
+  - algorithm for enforcing arc-consistency every time we make a new assignment
+  - When we make a new assignment to X, calls AC-3, starting with a queue of all arcs (Y,X) where Y is a neighbor of X
+  - function BACKTRACK(assignment, csp):
+    - if assignment complete: return assignment
+    - var = SELECT-UNASSIGNED-VAR(assignment,csp)
+    - for value in DOMAIN-VALUES(var,assignment,csp):
+      - if value consistent with assignment:
+        - add {var = value} to assignment
+        - inferences = INFERENCE(assignment, csp)
+        - if inferences ≠ failure: add inferences to assignment
+        - result = BACKTRACK(assignment, csp)
+        - if result ≠ failure: return result
+      - remove {var = value} and inferences from assignment
+    - return failure
+SELECT-UNASSIGNED-VAR:
+  - minimum remaining values (MRV) heuristic: select the variable that has the smallest domain
+  - degree heuristic: 
+    - select the variable that has the highest degree
+    - degree: number of nodes attached to (constrained by) the node in question
+DOMAIN-VALUES:
+  - least-constraining values heurstic: return variables in order by number of choices that are ruled out for neighboring variables
+  -
+    - try least-constraining values first
