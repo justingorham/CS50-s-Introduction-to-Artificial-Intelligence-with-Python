@@ -72,7 +72,7 @@ hard constraints details:
   - binary constraint: 2 variables
   - node consistency: when all the values in a variable's domain satisfy the variable's unary constraints
 arc consistency:
-  - when all the values ina variable's domain satisfy the variable's binary constraints
+  - when all the values in a variable's domain satisfy the variable's binary constraints
   - to make X arc-consistent with respect to Y, remove elements from X's domain until every choice for X has a possible choice for Y
 Arc Consistency:
   - function REVISE(csp, X,Y):
