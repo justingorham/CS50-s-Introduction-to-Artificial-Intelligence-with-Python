@@ -137,6 +137,6 @@ SELECT-UNASSIGNED-VAR:
     - select the variable that has the highest degree
     - degree: number of nodes attached to (constrained by) the node in question
 DOMAIN-VALUES:
-  - least-constraining values heurstic: return variables in order by number of choices that are ruled out for neighboring variables
+  - least-constraining values heuristic: return variables in order by number of choices that are ruled out for neighboring variables
   -
     - try least-constraining values first
