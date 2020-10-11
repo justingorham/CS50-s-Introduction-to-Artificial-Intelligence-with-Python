@@ -1,0 +1,41 @@
+Current Place: https://youtu.be/E4M_IQG0d9g?t=1999
+Supervised Learning: given a data set of input-output pairs, learn a function to map inputs to outputs
+classification: supervised learning task of learning a function mapping an input point to a discrete category
+example:
+  - given data where we have humidity and pressure for each day, if we label each pinot as "rain" or "no rain", the applied label makes this supervised
+  - f(humidity,pressure) to give us "Rain" or "No Rain".
+  - we want to approximate f, so we come up with a hypothesis function h(humidity, pressure)
+  - we could plot the points in a 2 axis graph (n-axis if we have n variables)
+  - given our data, if given a new point, we want to predict classification
+nearest-neighbor classification: algorithm that, given an input, chooses the class of the nearest data point to that input
+k-nearest neighbor classification:
+  - algorithm that, given an input, chooses the most common class out of the k nearest data points to that input
+  - can be slow in finding neighbors
+we could try to find a line that separate categories:
+  - data isn't always that clean however.
+back to example:
+  - x_{1} = humidity
+  - x_{2} = pressure
+  - h(x_1, x_2) =:
+      - Rain if w_0 + (w_1)(x_1) + (w_1)(x_1) ≥ 0
+      - No Rain otherwise
+  - to keep things in math terms, Rain = 1 and No Rain =
+  - Weight Vector w: (w_0, w_1, w_2)
+  - Input vector x: (1, x_1, x_2)
+  - a data point is now the dot product of Weight Vector and Input Vector
+  - h_{w}(x) =:
+      - 1 if w · x ≥ 0
+      - 0 otherwise
+perceptron learning rule:
+  - Given data point (x,y), update each weight according to:
+      - w_{i} = w_{i} + α(y - h_{w}(x)) × x_{i}
+      - w_{i} = w_{i} + α(actual value - estimate) × x_{i}
+hard threshold:
+  - definitely puts points into a category
+  - no nuance or concept of how sure we are about the category
+  - line
+  - 0 or 1
+soft threshold:
+  - curve
+  - adds nuance
+  - any value between 0 and 1 inclusive
