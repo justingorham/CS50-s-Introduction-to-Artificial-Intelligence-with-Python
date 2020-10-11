@@ -1,4 +1,4 @@
-Current Place: https://youtu.be/E4M_IQG0d9g?t=1999
+Current Place: https://youtu.be/E4M_IQG0d9g?t=2972
 Supervised Learning: given a data set of input-output pairs, learn a function to map inputs to outputs
 classification: supervised learning task of learning a function mapping an input point to a discrete category
 example:
@@ -39,3 +39,22 @@ soft threshold:
   - curve
   - adds nuance
   - any value between 0 and 1 inclusive
+Support Vector Machines:
+  - a "machine" designed to find the maximum margin separator
+  - We want this since a lot of lines, decision boundaries that can be drawn
+maximum margin separator:
+  - boundary that maximizes the distance between any of the data points
+regression:
+  - supervised learning task of learning a function mapping an input point to a continuous value
+Evaluating Hypotheses:
+  - can think of this as an optimization problem where we want to minimize a loss function
+loss function:
+  - function that expresses how poorly our hypothesis performs
+0-1 loss function:
+  - L(actual,predicted) = :
+    - 0 if actual = predicted,
+    - 1 otherwise
+L_{1} loss function:
+  - L(actual, predicted) = |actual - predicted|
+L_{2} loss function:
+  - L(actual, predicted) = (actual-predicted)^{2}
