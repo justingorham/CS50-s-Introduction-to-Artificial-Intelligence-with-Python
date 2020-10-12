@@ -1,4 +1,4 @@
-Current Place: https://youtu.be/E4M_IQG0d9g?t=2972
+Current Place: https://youtu.be/E4M_IQG0d9g?t=3943
 Supervised Learning: given a data set of input-output pairs, learn a function to map inputs to outputs
 classification: supervised learning task of learning a function mapping an input point to a discrete category
 example:
@@ -51,10 +51,23 @@ Evaluating Hypotheses:
 loss function:
   - function that expresses how poorly our hypothesis performs
 0-1 loss function:
-  - L(actual,predicted) = :
-    - 0 if actual = predicted,
-    - 1 otherwise
+  - L(actual,predicted) =:
+      - 0 if actual = predicted,
+      - 1 otherwise
 L_{1} loss function:
   - L(actual, predicted) = |actual - predicted|
 L_{2} loss function:
   - L(actual, predicted) = (actual-predicted)^{2}
+overfitting:
+  - a model that fits too closely to a particular data set and therefore may fail to generalize to future data
+  - this is a risk if the only thing we care about is minimizing the loss function
+regularization:
+  - penalizing hypotheses that are ore complex to favor simpler, more general hypotheses
+  - cost(h) = loss(h) + λ × complexity(h)
+can also run experiments by seeing if we're overfitting:
+holdout cross-validation:
+  - splitting data into a training set and a test set, such that learning happens on the training set and is evaluated on the test set
+k-fold cross validation:
+  - splitting data into k sets, and experimenting k times, using each set as a test set once, and using remaining data a training set
+scikit-learn:
+ - python library
