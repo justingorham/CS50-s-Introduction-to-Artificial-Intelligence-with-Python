@@ -1,4 +1,4 @@
-Current Place: https://youtu.be/E4M_IQG0d9g?t=3943
+Current Place: 
 Supervised Learning: given a data set of input-output pairs, learn a function to map inputs to outputs
 classification: supervised learning task of learning a function mapping an input point to a discrete category
 example:
@@ -70,4 +70,55 @@ holdout cross-validation:
 k-fold cross validation:
   - splitting data into k sets, and experimenting k times, using each set as a test set once, and using remaining data a training set
 scikit-learn:
- - python library
+  - python library
+reinforcement learning:
+  - given a set of rewards or punishments, learn what actions to take in the future
+  - An agent in some environment starts out in a state. The agent commits an action and is given a new state by/in the environment and a reward for the action
+  - reward could be big or small, positive, negative
+Markov Decision Process:
+  - model for decision-making, representing states, actions, and their rewards
+  - Set of states S
+  - Set of actions ACTIONS(s)
+  - Transition model P(s'|s,a):
+      - probability of state s` given action a taken at state state
+  - Reward function R(s,a,s')
+Q-learning:
+  - method for learning a function Q(s,a), estimate of the value of performing action a in state s
+  - overview:
+      - Start with Q(s,a) = 0 fro all s,action
+      - When we taken an action and receive a reward:
+          - Estimate the value of Q(s,a) based on current reward and expected future rewards
+          - Update Q(s,a) to take into account old estimate as well as our new estimate
+  - Q-Learning:
+      - Start with Q(s,a) = 0 for all s,action
+      - ? Every time we take an action a in state s and observe a reward r, we update
+        : - Q(s,a) ← Q(s,a) + α(new value estimate - old value estimate)
+          - Q(s,a) ← Q(s,a) + α(new value estimate - Q(s,a))
+          - Q(s,a) ← Q(s,a) + α((r + future reward estimate) - Q(s,a))
+          - Q(s,a) ← Q(s,a) + α((r + MAX_{a'}Q(s',a')) - Q(s,a))
+          - Q(s,a) ← Q(s,a) + α((r + γMAX_{a'}Q(s',a')) - Q(s,a))
+Greedy Decision-Making:
+  - When in sate s, choose action a with highest Q(s,a)
+Explore vs. Exploit:
+ε-greedy:
+  - Set ε equal to how often we want to move randomly.
+  - With probability 1 - ε choose the estimated best move.
+  - With probability ε, choose a random move.
+function approximation:
+  - approximating Q(s,a), often by a function combining various features, rather than storing one value for every state-action pair
+unsupervised learning:
+  - given input data without any additional feedback, learn patterns
+clustering:
+  - organizing a set of objects into groups in such a way that similar objects tend to be in the same groups
+  - some clustering applications:
+      - genetic research
+      - image segmentation
+      - market research
+      - medical imaging
+      - social network analysis
+k-means clustering:
+  - algorithm for clustering data based on repeatedly assigning points to clusters and updating those clusters' centers
+Learning:
+  - supervised learning
+  - reinforcement learning
+  - unsupervised learning
