@@ -4,8 +4,10 @@
 		"CSPs",
 		"GBFS",
 		"Ponens",
+		"backpropagation",
 		"biconditional",
 		"biconditionals",
+		"convolutional",
 		"overfitting",
 		"perceptron",
 		"scikit"

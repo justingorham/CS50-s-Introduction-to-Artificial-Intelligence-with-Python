@@ -1,0 +1,58 @@
+Current place: https://youtu.be/mFZazxxCKbw?t=5222
+Neural Networks:
+  - Neurons are connected to and receive electrical signals from other neurons
+  - Neurons process input signals and can be activated
+artificial neural network:
+  - mathematical model for learning inspire by biological neural Networks
+  - model mathematical function from inputs to outputs based on the structure and parameters of the network
+  - allows for learning the network's parameters based on data
+  - h(x_1,... x_n) = g(Σ^{n}_{i=1}{x_{i}w_{i}} + w_{0})
+gradient descent:
+  - algorithm for minimizing loss when training neural network
+  - Gradient descent:
+      - start with a random choice of weights
+      - Repeat:
+        - calculate the gradient based on *all data points* directing that will lead to decreasing loss
+        - Update weights according to the gradient
+  - Stochastic Gradient descent:
+      - start with a random choice of weights
+      - Repeat:
+        - calculate the gradient based on *one data point* directing that will lead to decreasing loss
+        - Update weights according to the gradient
+  - Mini-Batch Gradient descent:
+      - start with a random choice of weights
+      - Repeat:
+        - calculate the gradient based on *one small batch* directing that will lead to decreasing loss
+        - Update weights according to the gradient
+Perceptron:
+  - Only capable of learning linearly separable decision boundary
+multilayer neural network:
+  - artificial neural network with an input layer, an output layer, and at least one hidden layer 
+backpropagation:
+  - algorithm for training neural networks with hidden layers
+  - Backpropagation:
+    - Start with a random choice of weights.
+    - Repeat:
+      - Calculate error for output layer
+      - For each layer, starting with output layer, and moving inwards towards earliest hidden layer:
+        - Propagate error back one layer
+        - Update weights
+deep neural networks:
+  - neural network with multiple hidden layers
+Overfitting:
+dropout:
+  - temporarily removing units - selected at random - from a neural network to prevent over-reliance on certain units
+TensorFlow:
+  - http://playground.tensorflow.org/
+computer vision:
+  - computational methods for analyzing and understanding digital images
+image convolution:
+  - applying a filter that adds each pixel value of an image to its neighbors, weighted according to a kernel matrix
+pooling: 
+  - reducing the size of an input by sampling from regions in the input
+max-pooling:
+  - pooling by choosing the maximum value in each region
+convolutional neural network:
+  - neural networks that use convolution, usually for analyzing images
+feed-forward neural network:
+  - neural network that has connections only in one direction
