@@ -1,4 +1,3 @@
-Current place: https://youtu.be/mFZazxxCKbw?t=5222
 Neural Networks:
   - Neurons are connected to and receive electrical signals from other neurons
   - Neurons process input signals and can be activated
@@ -56,3 +55,5 @@ convolutional neural network:
   - neural networks that use convolution, usually for analyzing images
 feed-forward neural network:
   - neural network that has connections only in one direction
+recurrent neural network:
+  - network feeds output back into the network
